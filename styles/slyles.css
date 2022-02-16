@@ -15,7 +15,17 @@
 }
 
 
+/* Общие стили */
+
+html {
+  height: 100%;
+}
+
 body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
     font-family: "PT Sans", sans-serif;
     font-size: 18px;
     line-height: 21px;
@@ -63,12 +73,57 @@ body {
     line-height: 21px;
 }
 
+.body-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.central-text {
+  width: 720px;
+  margin: 0 auto;
+}
 
 
+/* Общие стили - шапка */
 
 .main-header {
     color: #000000;
     background-color: #ffffff;
+}
+
+.navigation {
+  display: flex;
+  padding: 0 70px;
+}
+
+/* Почему, пока я не убрала вот это правило, ниже не действовало правило для 2-го списка (navigation-reactions) margin-left: auto? */
+/* .navigation ul {
+  margin: 0;
+  padding: 0;
+} */
+
+.navigation-logo {
+  margin-right: 30px;
+}
+
+.navigation-list {
+  width: 480px;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation-reactions {
+  max-width: 210px;
+  margin: 0;
+  margin-left: auto;
+  padding: 0;
 }
 
 .navigation-link {
@@ -83,9 +138,47 @@ body {
     text-transform: uppercase;
 }
 
-.main-index {
+
+/* Общие стили - подвал */
+
+.main-footer-newsletter,
+.catalog-footer-newsletter {
     text-align: center;
 }
+
+.main-footer-newsletter .newsletter-title {
+  color: #ffffff;
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: space-between;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 0 72px;
+}
+
+.contacts-phone-link {
+  color: #000000;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+/* Для главной страницы */
+
+.main-index {
+  text-align: center;
+}
+
+
+/* Главная страница - Главный баннер - про Седону */
 
 .about-sedona-banner {
     background-image: url("../images/content/main-banner-background.jpg");
@@ -109,9 +202,35 @@ body {
     line-height: 36px;
 }
 
+
+/* Главная страница - "Преимущества" */
+
 .reasons-list,
-.reasons-item {
-    text-align: center;
+.reasons-item,
+.reasons-additional,
+.reasons-additional-item {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Сначала я попыталась назначить это правило не для всех пунктов списка, а только точечно для его первых двух пунктов, внутри которых нужен флекс)  - но всё разъехалось. Не понимаю, почему. Поэтому пришлось распространить на все пункты (в правило выше). А было так:
+.reasons-list,
+.reasons-additional,
+.reasons-item:first-child,
+.reasosn-item:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding:
+} */
+
+.reasons-item-square {
+  width: 400px;
+  height: 384px;
+  margin: 0;
 }
 
 .reasons-item-title,
@@ -120,9 +239,9 @@ body {
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    text-transform: uppercase;    
+    text-transform: uppercase;
 }
- 
+
 .reasons-dark {
     color: #ffffff;
     background-color: #83B3D3;
@@ -136,50 +255,35 @@ body {
     background-color: rgba(131, 179, 211, 0.12);
 }
 
+
+/* Главная страница - "К поиску гостиниц" (а также общий стиль - к Newsletter) */
+
 .searching-hotels-text,
 .newsletter-text {
     font-size: 22px;
     line-height: 26px;
 }
 
-.main-footer-newsletter, 
-.catalog-footer-newsletter {
-    text-align: center;
-}
+
+/* Для подвала главной страницы */
 
 .main-footer-newsletter {
     color: #ffffff;
     background-color: lightskyblue;
     background-image: url("../images/content/main-newsletter.jpg");
     background-size: 100% auto;
-    background-repeat: no-repeat;    
+    background-repeat: no-repeat;
 }
 
-.main-footer-newsletter .newsletter-title {
-    color: #ffffff;
-}
 
-.footer-contacts {
-    color: #000000;
-    background-color: #ffffff;
-}
-
-.contacts-phone-link {
-    color: #000000;
-    font-family: "PT Sans", sans-serif;
-    font-style: normal;    
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
+/* Страница каталога */
 
 .main-inner {
     line-height: 23px;
 }
+
+
+/* Страница каталога - Фильтры для поиска гостиниц */
 
 .catalog-top {
     color: #ffffff;
@@ -187,6 +291,11 @@ body {
     background-image: url("../images/content/catalog-background.jpg");
     background-size: 100% auto;
     background-repeat: no-repeat;
+}
+
+.catalog-wrapper {
+  width: 1056px;
+  margin: 0 auto;
 }
 
 .inner-header-title {
@@ -203,10 +312,52 @@ body {
     text-decoration: none;
 }
 
+.catalog-filters-form {
+  display: flex;
+}
+
 .catalog-filters-title {
     font-size: 20px;
     line-height: 26px;
     font-weight: 700;
+}
+
+.filters-group-1,
+.filters-group-2 {
+  width: 170px;
+}
+
+.filters-group-1 {
+  margin-right: 57px;
+}
+
+.filters-group-2 {
+  margin-right: 142px;
+}
+
+.filters-group-3 {
+  width: 287px;
+  margin-right: 81px;
+  margin-left: auto;
+}
+
+.catalog-filters-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-buttons {
+  width: 160px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
+/* Страница каталога - Отели */
+
+.catalog-hotels-sorting {
+  display: flex;
 }
 
 .catalog-hotels-after-filters {
