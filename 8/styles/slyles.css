@@ -1,0 +1,651 @@
+@font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/ptsans-400.woff2") format("woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "PT Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/ptsans-700.woff2") format("woff2");
+    font-display: swap;
+}
+
+
+/* Общие стили */
+
+html {
+  height: 100%;
+  background-color: #F2F2F2;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  min-height: 100%;
+  margin: 0 auto;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.button {
+  border: none;
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.button-brown {
+  background-color: #756257;
+}
+
+.button-blue {
+  background-color: #83B3D3;
+}
+
+.button-green {
+  background-color: #7DB54F;
+}
+
+.button-transparent {
+  border: none;
+  font-family: "PT Sans", sans-serif;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+  background: none;
+}
+
+.button-narrow,
+.button-card {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+.central-text {
+  width: 720px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
+/* Общие стили - шапка */
+
+.main-header {
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.navigation {
+  display: flex;
+  padding: 0 70px;
+}
+
+.navigation-logo {
+  display: block;
+  margin-right: 30px;
+}
+
+.main-header-logo {
+  display: block;
+}
+
+.navigation-list,
+.navigation-reactions {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.navigation-list {
+  width: 480px;
+}
+
+.navigation-reactions {
+  max-width: 300px;
+  margin-left: auto;
+}
+
+.navigation-link {
+  display: block;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px 17px;
+}
+
+.navigation-reactions .navigation-link {
+  min-width: 20px;
+  min-height: 26px;
+}
+
+
+/* Общие стили - подвал */
+
+.main-footer-newsletter,
+.catalog-footer-newsletter {
+  text-align: center;
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 72px 30px;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+.contacts-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts-social-item {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.contacts-social-item:last-child {
+  margin-right: 0;
+}
+/* Здесь применила размеры к пункту списка, а не к ссылке. Сделала так, потому что аналогично было на лайве и в презентации. Правильно ли это? (ведь область нажатия - это к ссылке, а не к её контейнеру должна быть?) */
+
+.contacts-phone-link {
+  margin: 0;
+  font-family: "PT Sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+
+
+/* Для главной страницы */
+
+.main-index {
+  text-align: center;
+}
+
+
+/* Главная страница - Главный баннер - про Седону */
+
+.about-sedona-banner {
+  padding-top: 51px;
+  padding-bottom: 82px;
+  background-image: url("../images/content/main-banner-background.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.about-cedona-text {
+  padding-top: 63px;
+  padding-bottom: 80px;
+}
+
+.about-sedona-text1,
+.searching-hotels-title,
+.newsletter-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.about-sedona-text2 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 36px;
+}
+
+.about-sedona-text1,
+.about-sedona-text2,
+.searching-hotels-title,
+.searching-hotels-text,
+.newsletter-title,
+.newsletter-text {
+  margin: 0 auto;
+}
+
+.about-sedona-text1,
+.searching-hotels-title,
+.newsletter-title {
+  margin-bottom: 30px;
+}
+
+
+/* Главная страница - "Преимущества" */
+
+.reasons-list,
+.reasons-item,
+.reasons-additional {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reasons-item-square {
+  width: 400px;
+  min-height: 384px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-top: 97px;
+  padding-bottom: 79px;
+}
+
+.reasons-additional-item {
+  padding-top: 184px;
+}
+
+.reasons-item-title,
+.reasons-additional-title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.reasons-text,
+.reasons-additional-title,
+.reasons-additional-text {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.reasons-item-title {
+  margin-bottom: 29px;
+}
+
+.reasons-additional-title {
+  margin-bottom: 20px;
+}
+
+.reasons-text:not(:last-child),
+.reasons-additional-text:not(last-child) {
+  margin-bottom: 30px;
+}
+
+.reasons-text-narrow {
+  width: 220px;
+}
+
+.reasons-dark {
+  color: #ffffff;
+  background-color: #83B3D3;
+}
+
+.reasons-light {
+  background: rgba(131, 179, 211, 0.2);
+}
+
+.reasons-verylight {
+  background-color: rgba(131, 179, 211, 0.12);
+}
+
+
+/* Главная страница - "К поиску гостиниц" (а также общий стиль - к Newsletter) */
+
+.searching-hotels {
+  padding-top: 91px;
+  padding-bottom: 93px;
+}
+
+.searching-hotels-text,
+.newsletter-text {
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.searching-hotels-text {
+  margin-bottom: 56px;
+}
+
+
+/* Для подвала главной страницы */
+
+.main-footer-newsletter .newsletter-title {
+  color: #ffffff;
+}
+
+.main-footer-newsletter {
+  padding-top: 94px;
+  padding-bottom: 94px;
+  color: #ffffff;
+  background-color: lightskyblue;
+  background-image: url("../images/content/main-newsletter.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.newsletter-text {
+  margin-bottom: 46px;
+}
+
+
+
+/* Страница каталога */
+
+.main-inner {
+    line-height: 23px;
+}
+
+
+/* Страница каталога - Фильтры для поиска гостиниц */
+
+.catalog-top {
+  padding: 30px 72px 83px;
+  color: #ffffff;
+  background-color: lightblue;
+  background-image: url("../images/content/catalog-background.jpg");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.catalog-top header {
+  margin-bottom: 45px;
+}
+
+.inner-header-title {
+  margin: 0;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 78px;
+  text-align: left;
+}
+
+.breadcrumbs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.breadcrumbs-item {
+  min-width: 12px;
+  margin-right: 26px;
+}
+
+.breadcrumbs-link {
+  color: inherit;
+  font-size: 16px;
+  line-height: 21px;
+  text-decoration: none;
+}
+
+.catalog-filters-form {
+  display: flex;
+}
+
+.catalog-filters-title {
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.filters-group-1,
+.filters-group-2 {
+  width: 170px;
+}
+
+.filters-group-1 {
+  margin-right: 57px;
+}
+
+.filters-group-2 {
+  margin-right: 142px;
+}
+
+.filters-group-3 {
+  width: 287px;
+  margin-right: 81px;
+  margin-left: auto;
+}
+
+.catalog-filters-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-buttons {
+  width: 160px;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+
+/* Страница каталога - Отели */
+
+.catalog-hotels {
+  padding: 44px 72px 0;
+}
+
+.catalog-hotels-sorting {
+  display: flex;
+  align-items: center;
+  margin-bottom: 53px;
+}
+
+.catalog-hotels-after-filters {
+  margin: 0;
+  padding: 0;
+  margin-right: 191px;
+  color: #000000;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  text-transform: uppercase;
+}
+
+.catalog-sorting {
+  display: flex;
+  margin-left: auto;
+}
+
+.catalog-sorting-button {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.catalog-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
+  gap: 10px 18px;
+  list-style-type: none;
+  margin: 0;
+  margin-bottom: 34px;
+  padding: 0;
+}
+
+.catalog-card {
+  display: grid;
+  grid-template-rows: 206px min-content auto min-content min-content;
+  grid-template-columns: min-content min-content;
+  gap: 16px 26px;
+  padding: 20px;
+}
+
+.catalog-card a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.catalog-card-link {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+
+.catalog-card-title {
+  margin: 0;
+  padding: 0;
+  color: #000000;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.card-title-link {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+.catalog-card-caption {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.catalog-card-price {
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+
+.hotel-rating {
+  grid-row: 5/6;
+  grid-column: 1/3;
+}
+
+.catalog-card-caption,
+.catalog-card-price,
+.hotel-rating-text-caption {
+  margin: 0;
+  padding: 0;
+}
+
+.hotel-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hotel-rating-text {
+  background: #F2F2F2;
+}
+
+.hotel-rating-text-caption {
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.catalog-load-more {
+  text-align: center;
+  padding: 30px 0;
+}
+
+
+/* Страница каталога - Пагинация */
+
+.catalog-hotels-pagination {
+  display: flex;
+  padding-top: 30px;
+  margin-bottom: 73px;
+}
+
+.catalog-pagination-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination-item {
+  display: flex;
+}
+
+.pagination-item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.pagination-link {
+  display: block;
+  box-sizing: border-box;
+  min-width: 55px;
+  height: 55px;
+  padding: 0 15px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 55px;
+  text-decoration: none;
+  text-align: center;
+  color: #ffffff;
+  background-color: #83B3D3;
+}
+
+.pagination-current {
+    color: #000000;
+    background-color: #F2F2F2;
+}
+
+.pages-on-screen {
+  display: flex;
+  margin-left: auto;
+}
+
+.pages-on-screen-text {
+  margin: 0;
+  padding: 0;
+  margin-right: 51px;
+}
+
+
+/* Страница каталога - футер - рассылка */
+
+.catalog-footer-newsletter {
+  color: #000000;
+}
+
+.catalog-footer-newsletter .newsletter-title {
+  margin-bottom: 46px;
+}
