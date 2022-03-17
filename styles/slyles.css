@@ -105,6 +105,7 @@ body {
 }
 
 .main-header-logo {
+  position: relative;
   margin-bottom: -5px;
   /* z-index: 1; */
 }
@@ -120,6 +121,7 @@ body {
 }
 
 .main-header-logo {
+  position: relative;
   display: block;
 }
 
@@ -153,16 +155,30 @@ body {
   text-align: center;
   color: #000000;
   text-decoration: none;
-  text-transform: uppercase;
-  padding: 20px 0px;
+  /* text-transform: uppercase; */
+  padding: 20px 0px 19px;
 }
 
 .navigation-list .navigation-item:not(:last-child) {
   margin-right: 34px;
 }
 
-.navigation-link-current {
+/* .navigation-link-current {
   border-bottom: 2px solid #756257;
+} */
+
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current:after {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #756257;
 }
 
 .navigation-icon {
@@ -202,9 +218,9 @@ body {
   position: relative;
 }
 
-.favourite:after {
-  content: "12";
+.favourite-circle {
   position: absolute;
+  display: block;
   left: 24px;
   top: 15px;
   width: 20px;
@@ -218,10 +234,6 @@ body {
 
 .button-navigation {
   min-width: 160px;
-}
-
-.button-navigation,
-.button-card {
   min-height: 37px;
   font-size: 16px;
   line-height: 37px;
@@ -235,8 +247,7 @@ body {
 
 .button-navigation:focus,
 .button-searching-hotels:focus {
-  border: 3px solid #83B3D3;
-  border-radius: 4px;
+  outline: 3px solid #83B3D3;
 }
 
 .button-navigation:active,
@@ -278,7 +289,7 @@ body {
 
 .newsletter-form .field:focus {
   background: #E6E6E6;
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
   border-radius: 10px 0px 0px 10px;
 }
 
@@ -293,7 +304,7 @@ body {
 
 .button-newsletter:focus {
   background: #68A2CA;
-  border: 3px solid #756257;
+  outline: 3px solid #756257;
   border-radius: 0px 10px 10px 0px;
 }
 
@@ -358,6 +369,7 @@ body {
 
 .contacts-phone-link {
   margin: 0;
+  padding: 15px;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -375,7 +387,7 @@ body {
 
 .contacts-phone-link:focus {
   color: #756257;
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
   box-sizing: border-box;
   border-radius: 10px;
 }
@@ -618,29 +630,51 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  transform: translate(-6px);
   list-style-type: none;
 }
 
 .breadcrumbs-item {
+  position: relative;
   min-width: 12px;
   margin-right: 10px;
   padding-right: 16px;
 }
 
 .breadcrumbs-link {
+  padding: 0 8px;
   color: inherit;
   font-size: 16px;
   line-height: 21px;
   text-decoration: none;
 }
 
-.breadcrumbs-item:not(:last-child) {
+.breadcrumbs-item:not(:last-child):after {
+  position: absolute;
+  /* display: flex; */
+  content: "";
+  width: 5px;
+  height: 8px;
   background-image: url("../images/breadcrumbs-arrow.svg");
   background-repeat: no-repeat;
-  background-size: 5px 8px;
+  /* background-size: 5px 8px; */
+  top: 8px;
+  right: 0;
   background-position: center right;
-  /* opacity: 0.3; */
+  opacity: 0.3;
+}
 
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
 }
 
 
@@ -815,7 +849,7 @@ body {
 }
 
 .catalog-card-image:focus {
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
 }
 
 .catalog-card-image:active {
@@ -846,6 +880,13 @@ body {
   grid-column: 2/3;
 }
 
+.button-card {
+  min-height: 37px;
+  font-size: 16px;
+  line-height: 37px;
+  padding: 0 15px;
+}
+
 .button-card.button-brown:hover {
   background-color: #615048;
 }
@@ -860,17 +901,17 @@ body {
 
 .button-card.button-brown:focus {
   background-color: #615048;
-  border: 3px solid #83B3D3;
+  outline: 3px solid #83B3D3;
 }
 
 .button-card.button-blue:focus {
   background-color: #68A2CA;
-  border: 3px solid #756257;
+  outline: 3px solid #756257;
 }
 
 .button-card.button-green:focus {
   background-color: #6C9E42;
-  border: 3px solid #756257;
+  outline: 3px solid #756257;
 }
 
 .button-card.button-brown:active {
@@ -978,7 +1019,7 @@ body {
 
 .pagination-link:focus {
   background: #68A2CA;
-  border: 3px solid #756257;
+  outline: 3px solid #756257;
 }
 
 .pagination-link:active {
