@@ -36,7 +36,11 @@ body {
 }
 
 .button {
+  display: inline-block;
   border: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: "PT Sans", sans-serif;
   font-size: 20px;
   line-height: 36px;
@@ -45,6 +49,8 @@ body {
   color: #ffffff;
   text-decoration: none;
   text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .button-brown {
@@ -67,12 +73,6 @@ body {
   line-height: 23px;
   text-align: center;
   background: none;
-}
-
-.button-narrow,
-.button-card {
-  font-size: 16px;
-  line-height: 21px;
 }
 
 .main-container {
@@ -101,6 +101,13 @@ body {
 .main-header {
   color: #000000;
   background-color: #ffffff;
+  /* margin-bottom: -5px; */
+}
+
+.main-header-logo {
+  position: relative;
+  margin-bottom: -5px;
+  /* z-index: 1; */
 }
 
 .navigation {
@@ -114,6 +121,7 @@ body {
 }
 
 .main-header-logo {
+  position: relative;
   display: block;
 }
 
@@ -131,12 +139,14 @@ body {
 }
 
 .navigation-reactions {
+  align-items: center;
   max-width: 300px;
   margin-left: auto;
 }
 
 .navigation-link {
   display: block;
+  box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -145,13 +155,105 @@ body {
   text-align: center;
   color: #000000;
   text-decoration: none;
-  text-transform: uppercase;
-  padding: 20px 17px;
+  /* text-transform: uppercase; */
+  padding: 20px 0px 19px;
+}
+
+.navigation-list .navigation-item:not(:last-child) {
+  margin-right: 34px;
+}
+
+/* .navigation-link-current {
+  border-bottom: 2px solid #756257;
+} */
+
+.navigation-link-current {
+  position: relative;
+}
+
+.navigation-link-current:after {
+  display: block;
+  position: absolute;
+  content: "";
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #756257;
+}
+
+.navigation-icon {
+  fill: #000000;
+}
+
+.navigation-link:hover {
+  color: #756257;
+}
+
+.navigation-link:hover .navigation-icon {
+  fill: #756257;
+}
+
+.navigation-link:focus {
+  color: rgba(117, 98, 87, 0.3);
+}
+
+.navigation-link:focus .navigation-icon {
+  fill: rgba(117, 98, 87, 0.3);
 }
 
 .navigation-reactions .navigation-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 20px;
   min-height: 26px;
+  padding: 20px 11px;
+}
+
+.navigation-reactions .navigation-item:last-child {
+  margin-left: 20px;
+}
+
+.favourite {
+  position: relative;
+}
+
+.favourite-circle {
+  position: absolute;
+  display: block;
+  left: 24px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #7DB54F;
+  font-size: 10px;
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.button-navigation {
+  min-width: 160px;
+  min-height: 37px;
+  font-size: 16px;
+  line-height: 37px;
+  padding: 0 15px;
+}
+
+.button-navigation:hover,
+.button-searching-hotels:hover {
+  background: #615048;
+}
+
+.button-navigation:focus,
+.button-searching-hotels:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.button-navigation:active,
+.button-searching-hotels:active {
+  background: #615048;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -160,6 +262,55 @@ body {
 .main-footer-newsletter,
 .catalog-footer-newsletter {
   text-align: center;
+}
+
+.main-footer-newsletter .field,
+.catalog-footer-newsletter .field {
+  border: none;
+  border-radius: 10px 0 0 10px;
+}
+
+.newsletter-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  width: 840px;
+  min-height: 60px;
+  margin: 0 auto;
+}
+
+.newsletter-form .field {
+  padding-left: 22px;
+  padding-right: 19px;
+}
+
+.newsletter-form .field:hover {
+  background-color: #E6E6E6;
+}
+
+.newsletter-form .field:focus {
+  background: #E6E6E6;
+  outline: 3px solid #83B3D3;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.button-newsletter {
+  padding: 15px 20px;
+  border-radius: 0 10px 10px 0;
+}
+
+.button-newsletter:hover {
+  background: #68A2CA;
+}
+
+.button-newsletter:focus {
+  background: #68A2CA;
+  outline: 3px solid #756257;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.button-newsletter:active {
+  background: #68A2CA;
+  color: rgba(255, 255, 255, 0.3)
 }
 
 .footer-contacts {
@@ -173,6 +324,7 @@ body {
 
 .contacts-social-list {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -180,19 +332,44 @@ body {
 }
 
 .contacts-social-item {
-  display: block;
-  width: 30px;
-  height: 30px;
+  display: flex;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
-.contacts-social-item:last-child {
-  margin-right: 0;
+.contacts-social-item:not(:last-child) {
+  margin-right: 30px;
 }
-/* Здесь применила размеры к пункту списка, а не к ссылке. Сделала так, потому что аналогично было на лайве и в презентации. Правильно ли это? (ведь область нажатия - это к ссылке, а не к её контейнеру должна быть?) */
+
+.contacts-social-item-link {
+  margin: auto;
+}
+
+.footer-social-icon {
+  fill: #83B3D3;
+}
+
+.contacts-social-item-link:hover .footer-social-icon {
+  fill: #68A2CA;
+}
+
+.contacts-social-item-link:focus .footer-social-icon {
+  fill: #83B3D3;
+}
+
+.contacts-social-item:focus {
+  border: 3px solid #83B3D3;
+  border-radius: 10px;
+}
+
+.contacts-social-item-link:active .footer-social-icon {
+  fill: rgba(104, 162, 202, 0.3);
+}
 
 .contacts-phone-link {
   margin: 0;
+  padding: 15px;
   font-family: "PT Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -202,6 +379,22 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   color: #000000;
+}
+
+.contacts-phone-link:hover {
+  color: #756257;
+}
+
+.contacts-phone-link:focus {
+  color: #756257;
+  outline: 3px solid #83B3D3;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.contacts-phone-link:active {
+  color: rgba(117, 98, 87, 0.3);
+  border: none;
 }
 
 
@@ -331,6 +524,26 @@ body {
   background-color: rgba(131, 179, 211, 0.12);
 }
 
+.accomodation {
+  background-image: url('../images/content/big icon-accomodation.svg');
+  background-repeat: no-repeat;
+  background-position: center top 89px;
+}
+
+.food {
+  background-image: url('../images/content/big icon-food.svg');
+  background-repeat: no-repeat;
+  background-position: center top 91px;
+}
+
+.souvenirs {
+  background-image: url('../images/content/big icon-souvenirs.svg');
+  background-repeat: no-repeat;
+  background-position: center top 85px;
+}
+
+
+
 
 /* Главная страница - "К поиску гостиниц" (а также общий стиль - к Newsletter) */
 
@@ -347,6 +560,13 @@ body {
 
 .searching-hotels-text {
   margin-bottom: 56px;
+}
+
+.button-searching-hotels {
+  width: 575px;
+  min-height: 60px;
+  padding: 15px 20px;
+  border-radius: 10px;
 }
 
 
@@ -372,6 +592,8 @@ body {
 
 
 
+
+
 /* Страница каталога */
 
 .main-inner {
@@ -386,7 +608,8 @@ body {
   color: #ffffff;
   background-color: lightblue;
   background-image: url("../images/content/catalog-background.jpg");
-  background-size: 100% auto;
+  /* background-size: 100% auto; */
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -407,20 +630,53 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
+  transform: translate(-6px);
   list-style-type: none;
 }
 
 .breadcrumbs-item {
+  position: relative;
   min-width: 12px;
-  margin-right: 26px;
+  margin-right: 10px;
+  padding-right: 16px;
 }
 
 .breadcrumbs-link {
+  padding: 0 8px;
   color: inherit;
   font-size: 16px;
   line-height: 21px;
   text-decoration: none;
 }
+
+.breadcrumbs-item:not(:last-child):after {
+  position: absolute;
+  /* display: flex; */
+  content: "";
+  width: 5px;
+  height: 8px;
+  background-image: url("../images/breadcrumbs-arrow.svg");
+  background-repeat: no-repeat;
+  /* background-size: 5px 8px; */
+  top: 8px;
+  right: 0;
+  background-position: center right;
+  opacity: 0.3;
+}
+
+.breadcrumbs-link:hover {
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:focus {
+  outline: 2px solid #83B3D3;
+  border-radius: 4px;
+}
+
+.breadcrumbs-link:active {
+  opacity: 0.3;
+}
+
 
 .catalog-filters-form {
   display: flex;
@@ -459,10 +715,28 @@ body {
 }
 
 .filter-buttons {
-  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
   margin-top: 40px;
   margin-left: auto;
   margin-right: 0;
+}
+
+.filter-buttons button:first-child {
+  margin-bottom: 20px;
+  min-width: 160px;
+  min-height: 48px;
+  padding: 6px 20px;
+  font-size: 16px;
+}
+
+.catalog-filters-item {
+  margin: 0;
+}
+
+.catalog-filters-item:not(:last-child) {
+  margin-bottom: 16px;
 }
 
 
@@ -489,6 +763,10 @@ body {
   text-transform: uppercase;
 }
 
+.select-control {
+  height: 48px;
+}
+
 .catalog-sorting {
   display: flex;
   margin-left: auto;
@@ -498,6 +776,44 @@ body {
   display: block;
   width: 48px;
   height: 48px;
+  box-sizing: border-box;
+  border: 2px solid #E6E6E6;
+  border-radius: 4px;
+}
+
+.catalog-sorting-button-current {
+  border: 2px solid #000000;
+}
+
+.catalog-sorting-button:not(:last-child) {
+  margin-right: 8px;
+}
+
+.catalog-sorting-button:hover,
+.catalog-sorting-button:focus {
+  border: 2px solid #83B3D3;
+}
+
+.catalog-sorting-button:active {
+  border: 2px solid #000000;
+}
+
+.sorting-tile {
+  background-image: url("../images/filters-tile.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sorting-slideshow {
+  background-image: url("../images/filters-slideshow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sorting-list {
+  background-image: url("../images/filters-list.svg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .catalog-cards {
@@ -519,13 +835,25 @@ body {
 }
 
 .catalog-card a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .catalog-card-link {
   grid-row: 1/2;
   grid-column: 1/3;
+}
+
+.catalog-card-image:hover {
+  opacity: 0.6;
+}
+
+.catalog-card-image:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.catalog-card-image:active {
+  opacity: 0.3;
 }
 
 .catalog-card-title {
@@ -552,6 +880,55 @@ body {
   grid-column: 2/3;
 }
 
+.button-card {
+  min-height: 37px;
+  font-size: 16px;
+  line-height: 37px;
+  padding: 0 15px;
+}
+
+.button-card.button-brown:hover {
+  background-color: #615048;
+}
+
+.button-card.button-blue:hover {
+  background-color: #68A2CA;
+}
+
+.button-card.button-green:hover {
+  background-color: #6C9E42;
+}
+
+.button-card.button-brown:focus {
+  background-color: #615048;
+  outline: 3px solid #83B3D3;
+}
+
+.button-card.button-blue:focus {
+  background-color: #68A2CA;
+  outline: 3px solid #756257;
+}
+
+.button-card.button-green:focus {
+  background-color: #6C9E42;
+  outline: 3px solid #756257;
+}
+
+.button-card.button-brown:active {
+  background-color: #615048;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-card.button-blue:active {
+  background-color: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.button-card.button-green:active {
+  background-color: #6C9E42;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .hotel-rating {
   grid-row: 5/6;
   grid-column: 1/3;
@@ -559,7 +936,7 @@ body {
 
 .catalog-card-caption,
 .catalog-card-price,
-.hotel-rating-text-caption {
+.hotel-rating-text {
   margin: 0;
   padding: 0;
 }
@@ -567,28 +944,41 @@ body {
 .hotel-rating {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .hotel-rating-text {
-  background: #F2F2F2;
-}
-
-.hotel-rating-text-caption {
+  width: 160px;
+  padding: 9px 15px 10px;
   font-size: 16px;
   line-height: 21px;
   text-transform: uppercase;
+  background: #F2F2F2;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .catalog-load-more {
   text-align: center;
   padding: 30px 0;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
 }
+
+.button-load-more {
+  width: 620px;
+  min-height: 60px;
+  padding: 15px 20px;
+}
+
 
 
 /* Страница каталога - Пагинация */
 
 .catalog-hotels-pagination {
   display: flex;
+  box-sizing: border-box;
+  align-items: center;
   padding-top: 30px;
   margin-bottom: 73px;
 }
@@ -623,6 +1013,20 @@ body {
   background-color: #83B3D3;
 }
 
+.pagination-link:hover {
+  background: #68A2CA;
+}
+
+.pagination-link:focus {
+  background: #68A2CA;
+  outline: 3px solid #756257;
+}
+
+.pagination-link:active {
+  background: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .pagination-current {
     color: #000000;
     background-color: #F2F2F2;
@@ -630,6 +1034,7 @@ body {
 
 .pages-on-screen {
   display: flex;
+  align-items: baseline;
   margin-left: auto;
 }
 
@@ -643,9 +1048,16 @@ body {
 /* Страница каталога - футер - рассылка */
 
 .catalog-footer-newsletter {
+  padding-bottom: 140px;
   color: #000000;
 }
 
 .catalog-footer-newsletter .newsletter-title {
   margin-bottom: 46px;
 }
+
+.catalog-footer-newsletter .field {
+  background-color: #F2F2F2;
+}
+
+
