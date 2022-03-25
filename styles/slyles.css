@@ -84,16 +84,12 @@ body {
   margin: 0 auto;
 }
 
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+input::placeholder {
+  color: #000000;
+  opacity: 0.6;
 }
+
+
 
 
 /* Общие стили - шапка */
@@ -162,10 +158,6 @@ body {
 .navigation-list .navigation-item:not(:last-child) {
   margin-right: 34px;
 }
-
-/* .navigation-link-current {
-  border-bottom: 2px solid #756257;
-} */
 
 .navigation-link-current {
   position: relative;
@@ -299,18 +291,21 @@ body {
 }
 
 .button-newsletter:hover,
-.button-load-more:hover {
+.button-load-more:hover,
+.button-modal:hover {
   background: #68A2CA;
 }
 
 .button-newsletter:focus,
-.button-load-more:focus {
+.button-load-more:focus,
+.button-modal:focus {
   background: #68A2CA;
   outline: 3px solid #756257;
 }
 
 .button-newsletter:active,
-.button-load-more:active {
+.button-load-more:active,
+.button-modal:active {
   background: #68A2CA;
   color: rgba(255, 255, 255, 0.3)
 }
@@ -812,7 +807,6 @@ body {
   opacity: 1;
 }
 
-
 .filters-group-2 {
   /* margin-right: 167px; */
 }
@@ -870,7 +864,6 @@ body {
   position: relative;
   height: 4px;
   background-color: #656A6E;
-
 }
 
 .range-bar {
@@ -909,8 +902,6 @@ body {
 .range-toggle:active {
   outline: 2px solid #83B3D3;
 }
-
-
 
 .filter-buttons {
   display: flex;
@@ -1253,6 +1244,11 @@ body {
   margin-right: 51px;
 }
 
+.pages-on-screen .select-control {
+  width: 160px;
+}
+
+
 
 /* Страница каталога - футер - рассылка */
 
@@ -1268,6 +1264,7 @@ body {
 .catalog-footer-newsletter .field {
   background-color: #F2F2F2;
 }
+
 
 
 
@@ -1291,6 +1288,7 @@ body {
   background-color: #ffffff;
   border-radius: 30px;
   box-shadow: 0 25px 50px 0 rgba(0,0,0,0.15);
+  color: #000000;
 }
 
 .modal-search {
@@ -1310,17 +1308,281 @@ body {
   background-image: url("../images/modal-close 1.svg");
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.modal-close-button:hover,
+.modal-search-field:hover {
+  background-color: #E6E6E6;
   cursor: pointer;
+}
+
+.modal-close-button:focus,
+.modal-search-field:focus {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+  }
+
+.modal-close-button:active {
+  background-color: #BEBEBE;
+  opacity: 0.3
+  }
+
+.modal-search-field:active {
+  background-color: #ffffff;
+  outline: 2px solid #000000;
 }
 
 .modal-title {
   width: 499px;
   margin: 0;
-  /* margin-right: 148px; */
   margin-bottom: 59px;
   font-size: 30px;
   line-height: 40px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #000000;
+}
+
+.modal-subheading,
+.modal-search-field,
+.field-number-caption {
+  font-size: 18px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.search-form {
+  display: grid;
+  grid-template-columns: 288px 230px;
+  grid-template-rows: repeat(4, auto);
+  row-gap: 40px;
+  column-gap: 57px;
+}
+
+.field-group-1 {
+  grid-row: 1/2;
+  grid-column: 1/3;
+}
+
+.field-group-2 {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+.field-group-3 {
+  grid-row: 3/4;
+  grid-column: 1/2;
+}
+
+.field-group-4 {
+  grid-row: 3/4;
+  grid-column: 2/3;
+}
+
+.button-modal {
+  grid-row: 4/5;
+  grid-column: 1/3;
+  padding: 12px 24px;
+  border-radius: 10px;
+}
+
+.field-group {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.search-form .field-group {
+  margin: 0;
+  /* margin-bottom: 40px; */
+}
+
+.modal-search-field {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 19px;
+  background-color: #F2F2F2;
+  font-family: inherit;
+}
+
+.field-group-1 .modal-search-field,
+.field-group-2 .modal-search-field {
+  width: 420px;
+  background-image: url("../images/date-1.svg");
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+}
+
+.field-number-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 133px;
+  box-sizing: border-box;
+  padding: 0 13px;
+  height: 50px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 19px;
+  background-color: #F2F2F2;
+}
+
+.field-number-button {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.field-number-button svg {
+  fill: #000000;
+  opacity: 0.3;
+}
+
+.field-number-button:hover svg {
+  opacity: 1;
+}
+
+.field-number-button:focus {
+  outline: 3px solid #83B3D3;
+}
+
+.field-number-button:focus svg {
+  opacity: 1;
+}
+
+.field-number-button:active svg {
+  opacity: 0.2;
+}
+
+.field-number {
+  width: 133px;
+  text-align: center;
+}
+
+/* .field-group-1 .modal-search-field:after,
+.field-group-2 .modal-search-field:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background-image: url("../images/date.svg");
+  z-index: 1;
+} */
+
+.modal-error-notification,
+.modal-success-notification {
+  position: absolute;
+  margin: 0;
+  font-size: 16px;
+  line-height: 40px;
+  top: 40px;
+  left: 155px;
+}
+
+.modal-error-notification {
+  color: #FF5757;
+}
+
+.modal-notification-close {
+  display: none;
+}
+
+.modal-container-close {
+  display: none
+}
+
+
+
+/* Тултип */
+
+.tooltip {
+  position: absolute;
+  margin-top: 14px;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+}
+
+.tooltip-toggle {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  background-color: #83B3D3;
+  background-image: url("../images/info.svg");
+  background-size: 1px 9px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tooltip-toggle:hover {
+  background-color: #68A2CA;
+}
+
+.tooltip-text {
+  display: block;
+  position: absolute;
+  right: -115px;
+  top: 100%;
+  margin-top: 15px;
+  box-sizing: border-box;
+  width: 256px;
+  border-radius: 10px;
+  padding: 15px 18px 18px 22px;
+  color: #ffffff;
+  background-color: #333333;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: none;
+  z-index: 1;
+  display: none;
+}
+
+.tooltip-text:after {
+  content:'';
+  background-image: url("../images/triangle.svg");
+  width: 19px;
+  height: 9px;
+  position:absolute;
+  /* transform: rotate(180deg); */
+  bottom: 100%;
+  left:0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tooltip-toggle:hover + .tooltip-text,
+.tooltip-toggle:focus + .tooltip-text {
+  display: block;
+}
+
+
+
+
+/* Общий класс для скрытия элементов */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
